@@ -16,34 +16,6 @@ This project demonstrates a Spring Boot application for user authentication with
 
 To get started with this project, follow these steps:
 
-1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/yourusername/your-repository.git
-    ```
-
-2. **Navigate to the Project Directory**
-    ```bash
-    cd your-repository
-    ```
-
-3. **Build and Run the Application**
-    ```bash
-    ./mvnw spring-boot:run
-    ```
-
-4. **Access the Application**
-    Open your browser and go to `http://localhost:8080` to see the application in action.
-
-## Setup and Configuration
-
-1. **Database Configuration**
-    Update `application.properties` with your database configuration.
-
-2. **Email Configuration**
-    Set up your email provider in `application.properties` to enable email verification.
-
-3. **JWT Configuration**
-    Configure JWT settings in `application.properties` to match your security requirements.
 
 ## API Endpoints
 
