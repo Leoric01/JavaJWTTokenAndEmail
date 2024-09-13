@@ -12,10 +12,6 @@ This project demonstrates a Spring Boot application for user authentication with
 - **Fetch authenticated user details**
 - **Basic error handling and exception logging**
 
-## Getting Started
-
-To get started with this project, follow these steps:
-
 
 ## API Endpoints
 
