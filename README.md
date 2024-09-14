@@ -4,7 +4,8 @@
 
 ## Overview
 
-This project demonstrates a Spring Boot application for user authentication with JWT-based security. It includes user signup, login, email verification, and basic error handling.
+This project demonstrates a Spring Boot application for user authentication with JWT-based security. It includes user signup, login, email verification, and basic error handling. 
+This basic setup is also probably going to be used as a base for my future projects with registrations.
 
 ## Features
 
