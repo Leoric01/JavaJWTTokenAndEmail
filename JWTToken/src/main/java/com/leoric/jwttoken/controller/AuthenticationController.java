@@ -15,15 +15,18 @@ import org.springframework.web.bind.annotation.*;
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private final JwtService jwtService;
+
     public AuthenticationController(AuthenticationService authenticationService, JwtService jwtService) {
         this.authenticationService = authenticationService;
         this.jwtService = jwtService;
     }
+
     @PostMapping("/signup")
     public ResponseEntity<User> register(@RequestBody RegisterUserDto registerUserDto) {
         User user = authenticationService.signUp(registerUserDto);
         return ResponseEntity.ok(user);
     }
+
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         User user = authenticationService.authenticate(loginUserDto);
@@ -41,6 +44,7 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
     @PostMapping("/resend")
     public ResponseEntity<?> resend(@RequestParam String email) {
         try {
