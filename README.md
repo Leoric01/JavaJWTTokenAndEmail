@@ -17,6 +17,10 @@ This project demonstrates a Spring Boot application for user authentication with
 
 ## API Endpoints
 
+https://documenter.getpostman.com/view/27823556/2sAXqngkQ7
+
+examples
+
 - **Signup**
     - `POST /api/auth/signup`
     - Request body: `{ "email": "user@example.com", "password": "password" }`
