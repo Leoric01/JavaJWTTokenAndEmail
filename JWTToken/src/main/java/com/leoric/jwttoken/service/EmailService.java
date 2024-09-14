@@ -40,7 +40,6 @@ public class EmailService {
             logger.info("Verification email sent to: {}", to);
         } catch (MessagingException e) {
             logger.error("Failed to send verification email to: {}", to, e);
-            // Handle exception as needed
         }
     }
 }
