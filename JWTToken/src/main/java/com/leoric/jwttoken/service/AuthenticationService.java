@@ -30,15 +30,17 @@ public class AuthenticationService {
         this.userRepository = userRepository;
         this.emailService = emailService;
     }
-    public User signUp(RegisterUserDto input){
-        User user = new User(input.getUsername(), input.getEmail(),passwordEncoder.encode(input.getPassword()));
+
+    public User signUp(RegisterUserDto input) {
+        User user = new User(input.getUsername(), input.getEmail(), passwordEncoder.encode(input.getPassword()));
         user.setVerificationCode(generateVerificationCode());
         user.setVerificationCodeExpiresAt(LocalDateTime.now().plusMinutes(60));
         user.setEnabled(true);
         sendVerificationEmail(user);
         return userRepository.save(user);
     }
-    public User authenticate(LoginUserDto input){
+
+    public User authenticate(LoginUserDto input) {
         User user = userRepository.findByEmail(input.getEmail()).
                 orElseThrow(() -> new RuntimeException("User not found"));
 
@@ -49,9 +51,10 @@ public class AuthenticationService {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(input.getEmail(), input.getPassword()));
         return user;
     }
-    public void verifyUser(VerifiedUserDto input){
+
+    public void verifyUser(VerifiedUserDto input) {
         Optional<User> optUser = userRepository.findByEmail(input.getEmail());
-        if(optUser.isPresent()){
+        if (optUser.isPresent()) {
             User user = optUser.get();
             if (user.getVerificationCodeExpiresAt().isBefore(LocalDateTime.now())) {
                 throw new RuntimeException("Verification code has expired.");
@@ -68,6 +71,7 @@ public class AuthenticationService {
             throw new RuntimeException("User not found.");
         }
     }
+
     public void resendVerificationCode(String email) {
         Optional<User> optUser = userRepository.findByEmail(email);
         if (optUser.isPresent()) {
@@ -107,6 +111,7 @@ public class AuthenticationService {
         }
 
     }
+
     private String generateVerificationCode() {
         Random random = new Random();
         int code = random.nextInt(900000) + 100000;
