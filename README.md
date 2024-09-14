@@ -7,6 +7,14 @@
 This project demonstrates a Spring Boot application for user authentication with JWT-based security. It includes user signup, login, email verification, and basic error handling. 
 This basic setup is also probably going to be used as a base for my future projects with registrations.
 
+## Setup
+
+In order to run this application, you gonna need gradle, java (i used 22), mysql, add .env file as follows:
+
+![image](https://github.com/user-attachments/assets/79925d94-0437-4dc3-a07e-18f7a1f1b131)
+
+
+
 ## Features
 
 - **User signup with email verification**
